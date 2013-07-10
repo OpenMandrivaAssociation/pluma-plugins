@@ -1,0 +1,91 @@
+--- mate-text-editor-plugins-master/configure.ac~	2013-04-04 11:47:56.000000000 +0300
++++ mate-text-editor-plugins-master/configure.ac	2013-05-18 22:10:50.999945000 +0300
+@@ -20,7 +20,7 @@
+ AM_SILENT_RULES([yes])
+ AC_CONFIG_HEADERS([config.h])
+ 
+-AC_PATH_PROG(MATECONFTOOL, mateconftool-2)
++#AC_PATH_PROG(MATECONFTOOL, mateconftool-2)
+ IT_PROG_INTLTOOL([0.35.0])
+ 
+ AC_DISABLE_STATIC
+@@ -63,8 +63,7 @@
+ PKG_CHECK_MODULES(PLUMA, [
+ 	glib-2.0 >= 2.13.0
+ 	gio-2.0 >= 2.16.0
+-	gtk+-2.0 >= 2.13.0
+-	mateconf-2.0 >= 1.1.0
++	gtk+-2.0 >= 2.13.0	
+ 	gtksourceview-2.0 >= 2.9.1
+ 	pluma >= 1.2.0
+ ])
+@@ -73,7 +72,7 @@
+ # MateConf related settings
+ # ================================================================
+ 
+-AM_MATECONF_SOURCE_2
++#AM_MATECONF_SOURCE_2
+ 
+ # ================================================================
+ # Plugins
+@@ -85,9 +84,9 @@
+ 
+ AC_MSG_CHECKING([which plugins to build])
+ 
+-ALL_PLUGINS="bookmarks showtabbar charmap drawspaces wordcompletion"
+-USEFUL_PLUGINS="bookmarks showtabbar charmap drawspaces wordcompletion"
+-DEFAULT_PLUGINS="bookmarks showtabbar charmap drawspaces wordcompletion"
++ALL_PLUGINS="bookmarks"
++USEFUL_PLUGINS="bookmarks"
++DEFAULT_PLUGINS="bookmarks"
+ 
+ PYTHON_ALL_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
+ PYTHON_USEFUL_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
+@@ -111,10 +110,10 @@
+ AC_ARG_WITH([plugins],
+ [  --with-plugins=plugin1,plugin2,...
+ 			  build the specified plugins. Available:
+-			  bracketcompletion, charmap, codecomment,
+-			  colorpicker, drawspaces, joinlines, multiedit,
+-			  textsize, showtabbar, sessionsaver, smartspaces,
+-			  terminal, wordcompletion, as well as the aliases
++			  bracketcompletion, codecomment,
++			  colorpicker, joinlines, multiedit,
++			  textsize, sessionsaver, smartspaces,
++			  terminal, , as well as the aliases
+ 			  default, all, and really-all],
+ 			  [plugins=$with_plugins],
+ 			  [plugins="default"])
+@@ -442,8 +441,6 @@
+ plugins/bookmarks/bookmarks.pluma-plugin.desktop.in
+ plugins/bracketcompletion/Makefile
+ plugins/bracketcompletion/bracketcompletion.pluma-plugin.desktop.in
+-plugins/charmap/Makefile
+-plugins/charmap/charmap.pluma-plugin.desktop.in
+ plugins/codecomment/Makefile
+ plugins/codecomment/codecomment.pluma-plugin.desktop.in
+ plugins/colorpicker/Makefile
+@@ -454,8 +451,6 @@
+ plugins/commander/commander/commands/Makefile
+ plugins/commander/modules/Makefile
+ plugins/commander/modules/find/Makefile
+-plugins/drawspaces/Makefile
+-plugins/drawspaces/drawspaces.pluma-plugin.desktop.in
+ plugins/joinlines/Makefile
+ plugins/joinlines/joinlines.pluma-plugin.desktop.in
+ plugins/multiedit/Makefile
+@@ -466,14 +461,10 @@
+ plugins/textsize/textsize.pluma-plugin.desktop.in
+ plugins/sessionsaver/Makefile
+ plugins/sessionsaver/sessionsaver.pluma-plugin.desktop.in
+-plugins/showtabbar/Makefile
+-plugins/showtabbar/showtabbar.pluma-plugin.desktop.in
+ plugins/smartspaces/Makefile
+ plugins/smartspaces/smartspaces.pluma-plugin.desktop.in
+ plugins/terminal/Makefile
+ plugins/terminal/terminal.pluma-plugin.desktop.in
+-plugins/wordcompletion/Makefile
+-plugins/wordcompletion/wordcompletion.pluma-plugin.desktop.in
+ plugins/synctex/Makefile
+ plugins/synctex/synctex/Makefile
+ plugins/synctex/synctex.pluma-plugin.desktop.in
