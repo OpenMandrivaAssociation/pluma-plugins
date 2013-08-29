@@ -4,7 +4,7 @@
 Summary:       Plugins for pluma
 Name:          pluma-plugins
 Version:       1.2.0
-Release:       1
+Release:       2
 License:       GPLv2+
 Group:         Editors 
 URL:           https://github.com/cygwinports/mate-text-editor-plugins
@@ -27,7 +27,8 @@ BuildRequires: python
 
 Requires:      pluma >= 1.6.0
 Requires:      python-gtksourceview
-Provides:      %{oname}-plugins = %{version}-%{release}
+
+%rename %{oname}
 
 %description
 Pluma is a small but powerful text editor designed expressly
