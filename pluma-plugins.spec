@@ -46,7 +46,7 @@ functionality.
 
 %prep
 %setup -q -n %{oname}-master
-%apply_patches
+%autopatch -p1
 
 %build
 NOCONFIGURE=1 ./autogen.sh
