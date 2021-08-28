@@ -3,14 +3,14 @@
 
 Summary:       Plugins for pluma
 Name:          pluma-plugins
-Version:       1.2.0
+Version:       1.26.0
 Release:       2
 License:       GPLv2+
 Group:         Editors 
 URL:           https://github.com/cygwinports/mate-text-editor-plugins
 # Git source:
-Source0:       %{oname}-master.zip
-Patch0:        mate-text-editor-plugins-1.2.0-mga-remove-obsolated-plugins.patch
+Source0:       https://pub.mate-desktop.org/releases/1.26/pluma-plugins-%{version}.tar.xz
+#Patch0:        mate-text-editor-plugins-1.2.0-mga-remove-obsolated-plugins.patch
 
 BuildRequires: intltool
 BuildRequires: mate-common
