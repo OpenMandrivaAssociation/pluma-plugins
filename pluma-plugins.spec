@@ -45,7 +45,7 @@ This package contains some extra plugins for Pluma, extending Pluma
 functionality.
 
 %prep
-%setup -q -n %{oname}-master
+%setup -q -n %{name}-%{version}
 %autopatch -p1
 
 %build
