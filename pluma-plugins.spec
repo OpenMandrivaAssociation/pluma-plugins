@@ -24,6 +24,7 @@ BuildRequires: pkgconfig(pygobject-2.0)
 BuildRequires: pkgconfig(gtksourceview-4)
 BuildRequires: pkgconfig(libpeas-1.0)
 BuildRequires: yelp-devel
+BuildRequires: yelp-tools
 BuildRequires: python
 
 Requires:      pluma >= 1.6.0
