@@ -16,17 +16,17 @@ BuildRequires: intltool
 BuildRequires: mate-common
 BuildRequires: pkgconfig(gio-2.0)
 BuildRequires: pkgconfig(dbus-python)
-BuildRequires: pkgconfig(vte)
+BuildRequires: pkgconfig(vte-2.91)
 BuildRequires: pkgconfig(glib-2.0)
-BuildRequires: pkgconfig(gtk+-2.0)
+BuildRequires: pkgconfig(gtk+-3.0)
 BuildRequires: pkgconfig(pluma) >= 1.6.0
 BuildRequires: pkgconfig(pygobject-2.0)
-#BuildRequires: pkgconfig(pygtk-2.0)
-#BuildRequires: pkgconfig(pygtksourceview-2.0)
+BuildRequires: pkgconfig(gtksourceview-4)
+BuildRequires: pkgconfig(libpeas-1.0)
+BuildRequires: yelp-devel
 BuildRequires: python
 
 Requires:      pluma >= 1.6.0
-Requires:      python-gtksourceview
 
 %rename %{oname}
 
@@ -50,7 +50,10 @@ functionality.
 
 %build
 NOCONFIGURE=1 ./autogen.sh
-%configure2_5x --with-plugins=all
+%configure  \
+            --with-plugins=all \
+            --enable-python       \
+            --enable-deprecations
 
 %make LIBS='-lm -lgmodule-2.0'
 
