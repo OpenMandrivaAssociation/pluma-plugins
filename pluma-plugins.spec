@@ -1,5 +1,4 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
-%define oname mate-text-editor-plugins
 
 Summary:       Plugins for pluma
 Name:          pluma-plugins
@@ -68,3 +67,6 @@ NOCONFIGURE=1 ./autogen.sh
 %doc COPYING AUTHORS
 %{_datadir}/pluma/plugins/*
 %{_libdir}/pluma/plugins/*
+%{_datadir}/glib-2.0/schemas/org.mate.pluma.plugins.*
+%{_datadir}/help/*/pluma-plugins/
+%{_datadir}/metainfo/pluma-*
