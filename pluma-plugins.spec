@@ -21,8 +21,8 @@ BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(gtk+-2.0)
 BuildRequires: pkgconfig(pluma) >= 1.6.0
 BuildRequires: pkgconfig(pygobject-2.0)
-BuildRequires: pkgconfig(pygtk-2.0)
-BuildRequires: pkgconfig(pygtksourceview-2.0)
+#BuildRequires: pkgconfig(pygtk-2.0)
+#BuildRequires: pkgconfig(pygtksourceview-2.0)
 BuildRequires: python
 
 Requires:      pluma >= 1.6.0
