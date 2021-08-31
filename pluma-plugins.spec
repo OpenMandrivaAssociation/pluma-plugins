@@ -56,16 +56,15 @@ NOCONFIGURE=1 ./autogen.sh
             --enable-python       \
             --enable-deprecations
 
-%make LIBS='-lm -lgmodule-2.0'
+%make_build LIBS='-lm -lgmodule-2.0'
 
 %install
 
-%makeinstall_std
+%make_install
 
 %{find_lang} %{name}
 
 %files  -f %{name}.lang
-%doc README COPYING AUTHORS
+%doc COPYING AUTHORS
 %{_datadir}/pluma/plugins/*
 %{_libdir}/pluma/plugins/*
-
